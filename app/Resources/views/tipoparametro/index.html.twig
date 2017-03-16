@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Tipoparametros list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Parametro</th>
+                <th>Current</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tipoParametro in tipoParametros %}
+            <tr>
+                <td><a href="{{ path('tipoparametro_show', { 'id': tipoParametro.id }) }}">{{ tipoParametro.id }}</a></td>
+                <td>{{ tipoParametro.parametro }}</td>
+                <td>{% if tipoParametro.current %}{{ tipoParametro.current|date('Y-m-d') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('tipoparametro_show', { 'id': tipoParametro.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('tipoparametro_edit', { 'id': tipoParametro.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('tipoparametro_new') }}">Create a new tipoParametro</a>
+        </li>
+    </ul>
+{% endblock %}

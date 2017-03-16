@@ -1,0 +1,75 @@
+        body{
+            color: #333333;
+        }
+        
+        .panel-primary > .panel-heading{
+            background-color:#222;
+            border-color:#222;
+        }
+        
+        .panel-primary {
+            border-color:#222;
+            color: #333333;
+        }
+       
+        .modal-dialog{ width:85%; }
+        .modal{
+            color: #333333;
+        }
+        h3{color: #333333;}
+        h4{color: #333333;}
+        
+       #calendar > .ui-widget-content{
+           background:#fff;
+       } 
+       
+       
+       .modal {
+           font-size: 14px;
+       }
+       
+       label,input,select,textarea{
+           font-size: 14px;
+       }
+       
+       
+        
+        .error{
+            border-color: red;
+        }
+        
+                    tfoot input {
+                width: 100%;
+                padding: 3px;
+                box-sizing: border-box;
+            }
+            tfoot {
+                display: table-header-group;
+            }
+            .modal-dialog{
+                width:85%;
+            }
+            
+            .modal-header{
+                background: #337AB7;
+                color: #fff;
+            }
+            
+            .modal-title{
+                color: #fff;
+            }
+            
+            .table > thead{
+                background: #337AB7;
+                color: #fff;
+            }
+    .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control{
+       cursor:pointer;
+       background:#fff;
+    }        
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th {
+        border-top: 1px solid #dddddd;
+        line-height: 1.2;
+        padding: 0px;
+        vertical-align: top;
+        }

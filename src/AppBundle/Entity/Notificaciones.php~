@@ -1,0 +1,343 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Notificaciones
+ *
+ * @ORM\Table(name="notificaciones")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\NotificacionesRepository")
+ */
+class Notificaciones
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="responsable", type="text")
+     */
+    private $responsable;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fechaVencimiento", type="date")
+     */
+    private $fechaVencimiento;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="anticipacion", type="integer")
+     */
+    private $anticipacion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="estado", type="string", length=6)
+     */
+    private $estado;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="numEnvios", type="integer")
+     */
+    private $numEnvios;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="notificacion", type="text")
+     */
+    private $notificacion;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="respuesta", type="text")
+     */
+    private $respuesta;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fechaRespuesta", type="date")
+     */
+    private $fechaRespuesta;
+    
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="current", type="date")
+     */
+    private $current;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Contrato", inversedBy="notificacion")
+     * @ORM\JoinColumn(name="idContrato", referencedColumnName="id")
+     */
+    private $idContrato;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set responsable
+     *
+     * @param integer $responsable
+     *
+     * @return Notificaciones
+     */
+    public function setResponsable($responsable)
+    {
+        $this->responsable = $responsable;
+
+        return $this;
+    }
+
+    /**
+     * Get responsable
+     *
+     * @return int
+     */
+    public function getResponsable()
+    {
+        return $this->responsable;
+    }
+
+    /**
+     * Set fechaVencimiento
+     *
+     * @param \DateTime $fechaVencimiento
+     *
+     * @return Notificaciones
+     */
+    public function setFechaVencimiento($fechaVencimiento)
+    {
+        $this->fechaVencimiento = $fechaVencimiento;
+
+        return $this;
+    }
+
+    /**
+     * Get fechaVencimiento
+     *
+     * @return \DateTime
+     */
+    public function getFechaVencimiento()
+    {
+        return $this->fechaVencimiento;
+    }
+
+    /**
+     * Set anticipacion
+     *
+     * @param integer $anticipacion
+     *
+     * @return Notificaciones
+     */
+    public function setAnticipacion($anticipacion)
+    {
+        $this->anticipacion = $anticipacion;
+
+        return $this;
+    }
+
+    /**
+     * Get anticipacion
+     *
+     * @return int
+     */
+    public function getAnticipacion()
+    {
+        return $this->anticipacion;
+    }
+
+    /**
+     * Set estado
+     *
+     * @param string $estado
+     *
+     * @return Notificaciones
+     */
+    public function setEstado($estado)
+    {
+        $this->estado = $estado;
+
+        return $this;
+    }
+
+    /**
+     * Get estado
+     *
+     * @return string
+     */
+    public function getEstado()
+    {
+        return $this->estado;
+    }
+
+    /**
+     * Set numEnvios
+     *
+     * @param integer $numEnvios
+     *
+     * @return Notificaciones
+     */
+    public function setNumEnvios($numEnvios)
+    {
+        $this->numEnvios = $numEnvios;
+
+        return $this;
+    }
+
+    /**
+     * Get numEnvios
+     *
+     * @return int
+     */
+    public function getNumEnvios()
+    {
+        return $this->numEnvios;
+    }
+
+    /**
+     * Set notificacion
+     *
+     * @param string $notificacion
+     *
+     * @return Notificaciones
+     */
+    public function setNotificacion($notificacion)
+    {
+        $this->notificacion = $notificacion;
+
+        return $this;
+    }
+
+    /**
+     * Get notificacion
+     *
+     * @return string
+     */
+    public function getNotificacion()
+    {
+        return $this->notificacion;
+    }
+
+    /**
+     * Set fechaRespuesta
+     *
+     * @param \DateTime $fechaRespuesta
+     *
+     * @return Notificaciones
+     */
+    public function setFechaRespuesta($fechaRespuesta)
+    {
+        $this->fechaRespuesta = $fechaRespuesta;
+
+        return $this;
+    }
+
+    /**
+     * Get fechaRespuesta
+     *
+     * @return \DateTime
+     */
+    public function getFechaRespuesta()
+    {
+        return $this->fechaRespuesta;
+    }
+    
+    /**
+     * Set respuesta
+     *
+     * @param string $respuesta
+     *
+     * @return Notificaciones
+     */
+    public function setRespuesta($respuesta)
+    {
+        $this->respuesta = $respuesta;
+
+        return $this;
+    }
+
+    /**
+     * Get respuesta
+     *
+     * @return string
+     */
+    public function getRespuesta()
+    {
+        return $this->respuesta;
+    }
+
+    /**
+     * Set current
+     *
+     * @param \DateTime $current
+     *
+     * @return Notificaciones
+     */
+    public function setCurrent($current)
+    {
+        $this->current = $current;
+
+        return $this;
+    }
+
+    /**
+     * Get current
+     *
+     * @return \DateTime
+     */
+    public function getCurrent()
+    {
+        return $this->current;
+    }
+    
+    /**
+     * Set idContrato
+     *
+     * @param \integer $idContrato
+     *
+     * @return Notificaciones
+     */
+    public function setIdContrato($idContrato)
+    {
+        $this->idContrato = $idContrato;
+
+        return $this;
+    }
+
+    /**
+     * Get idContrato
+     *
+     * @return \int
+     */
+    public function getIdContrato()
+    {
+        return $this->idContrato;
+    }
+}
