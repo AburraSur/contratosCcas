@@ -1,0 +1,23 @@
+{% extends "base1.html.twig" %}
+
+{% block content %}
+    <div class="container">
+        
+        <h2><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> Crear Parametro</h2>
+        {{ form_start(form) }}
+          <div class="form-group">
+            {{ form_label(form.conInformacion) }}
+            {{ form_widget(form.conInformacion) }}
+          </div>
+          
+          <div class="form-group">
+            {{ form_label(form.justificacion) }}
+            {{ form_widget(form.justificacion) }}
+          </div>
+          <div class="form-group">
+            {{ form_widget(form.save) }}
+          </div>
+          
+        {{ form_end(form) }}
+    </div>
+{% endblock content %}

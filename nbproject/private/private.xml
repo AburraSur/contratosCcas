@@ -8,13 +8,22 @@
             <file>file:/C:/Bitnami/wampstack-5.6.29-0/apache2/htdocs/contratosCcas/app/Resources/views/parametros/index.html.twig</file>
             <file>file:/C:/Bitnami/wampstack-5.6.29-0/apache2/htdocs/contratosCcas/app/Resources/views/parametros/edit.html.twig</file>
             <file>file:/C:/Bitnami/wampstack-5.6.29-0/apache2/htdocs/contratosCcas/app/Resources/views/tipoparametro/index.html.twig</file>
+            <file>file:/C:/Bitnami/wampstack-5.6.29-0/apache2/htdocs/contratosCcas/app/Resources/views/contrato/new.html.twig</file>
+            <file>file:/C:/Bitnami/wampstack-5.6.29-0/apache2/htdocs/contratosCcas/app/config/parameters.yml</file>
+            <file>file:/C:/Bitnami/wampstack-5.6.29-0/apache2/htdocs/contratosCcas/src/AppBundle/Controller/ContratoController.php</file>
+            <file>file:/C:/Bitnami/wampstack-5.6.29-0/apache2/htdocs/contratosCcas/vendor/friendsofsymfony/user-bundle/Resources/views/layout.html.twig</file>
+            <file>file:/C:/Bitnami/wampstack-5.6.29-0/apache2/htdocs/contratosCcas/app/Resources/views/tipoparametro/edit.html.twig</file>
+            <file>file:/C:/Bitnami/wampstack-5.6.29-0/apache2/htdocs/contratosCcas/src/AppBundle/Entity/Parametros.php</file>
+            <file>file:/C:/Bitnami/wampstack-5.6.29-0/apache2/htdocs/contratosCcas/vendor/friendsofsymfony/user-bundle/Controller/SecurityController.php</file>
             <file>file:/C:/Bitnami/wampstack-5.6.29-0/apache2/htdocs/contratosCcas/src/AppBundle/Controller/DefaultController.php</file>
             <file>file:/C:/Bitnami/wampstack-5.6.29-0/apache2/htdocs/contratosCcas/src/AppBundle/Controller/TipoParametroController.php</file>
-            <file>file:/C:/Bitnami/wampstack-5.6.29-0/apache2/htdocs/contratosCcas/app/config/parameters.yml</file>
+            <file>file:/C:/Bitnami/wampstack-5.6.29-0/apache2/htdocs/contratosCcas/vendor/friendsofsymfony/user-bundle/Resources/views/Security/login.html.twig</file>
             <file>file:/C:/Bitnami/wampstack-5.6.29-0/apache2/htdocs/contratosCcas/src/AppBundle/Controller/ParametrosController.php</file>
             <file>file:/C:/Bitnami/wampstack-5.6.29-0/apache2/htdocs/contratosCcas/app/Resources/views/tipoparametro/new.html.twig</file>
-            <file>file:/C:/Bitnami/wampstack-5.6.29-0/apache2/htdocs/contratosCcas/app/Resources/views/tipoparametro/edit.html.twig</file>
-            <file>file:/C:/Bitnami/wampstack-5.6.29-0/apache2/htdocs/contratosCcas/vendor/friendsofsymfony/user-bundle/Controller/SecurityController.php</file>
+            <file>file:/C:/Bitnami/wampstack-5.6.29-0/apache2/htdocs/contratosCcas/vendor/friendsofsymfony/user-bundle/Resources/views/Security/login_content.html.twig</file>
+            <file>file:/C:/Bitnami/wampstack-5.6.29-0/apache2/htdocs/contratosCcas/src/AppBundle/Entity/Contrato.php</file>
+            <file>file:/C:/Bitnami/wampstack-5.6.29-0/apache2/htdocs/contratosCcas/app/Resources/views/contrato/contrato.html.twig</file>
+            <file>file:/C:/Bitnami/wampstack-5.6.29-0/apache2/htdocs/contratosCcas/app/Resources/views/base1.html.twig</file>
         </group>
     </open-files>
 </project-private>
