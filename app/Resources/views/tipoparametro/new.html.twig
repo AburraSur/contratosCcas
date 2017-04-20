@@ -1,16 +1,23 @@
-{% extends 'base.html.twig' %}
-
-{% block body %}
-    <h1>Tipoparametro creation</h1>
+{% extends 'base1.html.twig' %}
+{% block content %}
+    <div class="container">
+        
+        <h2><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> Crear Tipo de Parametro</h2>
 
     {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+        <div class="form-group">
+            {{ form_label(form.parametro) }}
+            {{ form_widget(form.parametro) }}
+          </div>
+          <div class="form-group">
+            {{ form_label(form.current) }}
+            {{ form_widget(form.current) }}
+          </div> 
+          <div class="form-group">
+            {{ form_widget(form.save) }}
+            <a href="{{ path('tipoparametro_index') }}" class="btn btn-primary">Back to the list</a>
+          </div>
     {{ form_end(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('tipoparametro_index') }}">Back to the list</a>
-        </li>
-    </ul>
+    
 {% endblock %}

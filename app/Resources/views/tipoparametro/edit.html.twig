@@ -1,21 +1,25 @@
-{% extends 'base.html.twig' %}
-
-{% block body %}
-    <h1>Tipoparametro edit</h1>
+{% extends 'base1.html.twig' %}
+{% block content %}
+    <div class="container">
+        
+        <h2><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> Editar Tipo de Parametro</h2>
 
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
+    <div class="form-group col-md-6">    
+        <div class="col-md-4" >
+            <input type="submit" value="Edit" class="btn btn-primary" />
+        </div>    
     {{ form_end(edit_form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('tipoparametro_index') }}">Back to the list</a>
-        </li>
-        <li>
+     
+        <div class="col-md-4" >
+            <a href="{{ path('tipoparametro_index') }}" class="btn btn-warning" >Regresar</a>
+        </div>
+        <div class="col-md-4" >
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Borrar" class="btn btn-danger">
             {{ form_end(delete_form) }}
-        </li>
-    </ul>
-{% endblock %}
+        </div>
+    </div>
+{% endblock content%}

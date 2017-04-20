@@ -6,6 +6,9 @@ use AppBundle\Entity\TipoParametro;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 /**
  * Tipoparametro controller.
@@ -40,9 +43,20 @@ class TipoParametroController extends Controller
     public function newAction(Request $request)
     {
         $tipoParametro = new Tipoparametro();
-        $form = $this->createForm('AppBundle\Form\TipoParametroType', $tipoParametro);
+//        $form = $this->createForm('AppBundle\Form\TipoParametroType', $tipoParametro);
+//        $form->handleRequest($request);
+        $form = $this->createFormBuilder($tipoParametro)
+                ->add('parametro',TextType::class, array('label' => 'Tipo Parametros', 'attr' => array('class' => 'form-control','id' => 'tipoParam', 'placeholder' => 'Tipo Parametro')))
+                ->add('current', DateType::class, array(
+                        'label' => 'Fecha creación',
+                        'widget' => 'single_text',
+                        'html5' => false,
+                        'attr' => ['class' => 'datepicker form-control' ],
+                    ))
+                ->add('save', SubmitType::class, array('label' => 'Guardar' , 'attr' => array('class' => 'btn btn-default')))
+                ->getForm();
+        
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($tipoParametro);
