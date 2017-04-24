@@ -3,72 +3,267 @@
 {% block content %}
     <div class="container">
         
-        <h2><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> Crear Parametro</h2>
+        <h2><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Nuevo Contrato</h2>
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#menu1"><h3>Información Basica</h3></a></li>
+            <li><a data-toggle="tab" href="#menu2"><h3>Entidad</h3></a></li>
+            <li><a data-toggle="tab" href="#menu3"><h3>Interventor</h3></a></li>
+            <li><a data-toggle="tab" href="#menu4"><h3>Supervisor</h3></a></li>
+            <li><a data-toggle="tab" href="#menu5"><h3>Detalles</h3></a></li>
+            <li><a data-toggle="tab" href="#menu6"><h3>notificaciones</h3></a></li>
+        </ul>
         {{ form_start(form) }}
-          <div class="form-group">
-            {{ form_label(form.conInformacion) }}
-            {{ form_widget(form.conInformacion) }}
-          </div>
-          
-          <div class="form-group">
-            {{ form_label(form.justificacion) }}
-            {{ form_widget(form.justificacion) }}
-          </div>
-          <div class="form-group">
-              <div class="col-md-6" >
-                {{ form_label(form.claseContrato) }}
-                {{ form_widget(form.claseContrato) }}
-              </div> 
-              <div class="col-md-6" >
-                {{ form_label(form.numConvenio) }}
-                {{ form_widget(form.numConvenio) }}
-              </div> 
-          </div>
-          <div class="form-group">
-              <div class="col-md-6" >
-                {{ form_label(form.fechaSuscripcion) }}
-                {{ form_widget(form.fechaSuscripcion) }}
-              </div> 
-              <div class="col-md-6" >
-                {{ form_label(form.vecesRegistrado) }}
-                {{ form_widget(form.vecesRegistrado) }}
-              </div> 
-          </div>
-          <div class="form-group">
-            {{ form_label(form.objetoContrato) }}
-            {{ form_widget(form.objetoContrato) }}
-          </div>
-          <div class="form-group">
-            {{ form_label(form.vlrContrato) }}
-            {{ form_widget(form.vlrContrato) }}
-          </div>
-          <div class="form-group">
-              <div class="col-md-6" >
-                {{ form_label(form.idEntidad) }}
-                {{ form_widget(form.idEntidad) }}
-              </div> 
-              <div class="col-md-6" >
-                {{ form_label(form.dvEntidad) }}
-                {{ form_widget(form.dvEntidad) }}
-              </div> 
-          </div>
-          <div class="form-group">
-            {{ form_label(form.nombreEntidad) }}
-            {{ form_widget(form.nombreEntidad) }}
-          </div>
-          <div class="form-group">
-              <div class="col-md-6" >
-                {{ form_label(form.plazo) }}
-                {{ form_widget(form.plazo) }}
-              </div> 
-              <div class="col-md-6" >
-                {{ form_label(form.tipoGarantia) }}
-                {{ form_widget(form.tipoGarantia) }}
-              </div> 
-          </div>
-          <div class="form-group">
-            {{ form_widget(form.save) }}
-          </div>
+        <div class="tab-content">
+            <div id="menu1" class="tab-pane fade  in active">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        Información basica del contrato
+                    </div>
+                    <div class="panel panel-body" >
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                {{ form_label(form.conInformacion) }}
+                                {{ form_widget(form.conInformacion) }}
+                            </div>    
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                {{ form_label(form.justificacion) }}
+                                {{ form_widget(form.justificacion) }}
+                            </div>
+                        </div>    
+                        <div class="form-group">
+                            <div class="col-md-3" >
+                              {{ form_label(form.claseContrato) }}
+                              {{ form_widget(form.claseContrato) }}
+                            </div> 
+                            <div class="col-md-3" >
+                              {{ form_label(form.numConvenio) }}
+                              {{ form_widget(form.numConvenio) }}
+                            </div> 
+                            <div class="col-md-3" >
+                              {{ form_label(form.fechaSuscripcion) }}
+                              {{ form_widget(form.fechaSuscripcion) }}
+                            </div> 
+                            <div class="col-md-3" >
+                              {{ form_label(form.vecesRegistrado) }}
+                              {{ form_widget(form.vecesRegistrado) }}
+                            </div> 
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                {{ form_label(form.objetoContrato) }}
+                                {{ form_widget(form.objetoContrato) }}
+                            </div>    
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                {{ form_label(form.vlrContrato) }}
+                                {{ form_widget(form.vlrContrato) }}
+                            </div>    
+                        </div>
+                        <div class="form-group">
+                            <a data-toggle="tab" href="#menu2" class="btn btn-info pull-right">Siguiente</a>
+                        </div>
+                    </div>
+                </div>        
+            </div>
+            <div id="menu2" class="tab-pane fade">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        Entidad pública que interviene en el convenio o contrato
+                    </div>
+                    <div class="panel panel-body" >
+                        <div class="form-group">
+                            <div class="col-md-6" >
+                              {{ form_label(form.idEntidad) }}
+                              {{ form_widget(form.idEntidad) }}
+                            </div> 
+                            <div class="col-md-6" >
+                              {{ form_label(form.dvEntidad) }}
+                              {{ form_widget(form.dvEntidad) }}
+                            </div> 
+                        </div>
+                        <div class="form-group">
+                          {{ form_label(form.nombreEntidad) }}
+                          {{ form_widget(form.nombreEntidad) }}
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6" >
+                              {{ form_label(form.plazo) }}
+                              {{ form_widget(form.plazo) }}
+                            </div> 
+                            <div class="col-md-6" >
+                              {{ form_label(form.tipoGarantia) }}
+                              {{ form_widget(form.tipoGarantia) }}
+                            </div> 
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6" >
+                              {{ form_label(form.riesgosAsegurados) }}
+                              {{ form_widget(form.riesgosAsegurados) }}
+                            </div> 
+                            <div class="col-md-6" >
+                              {{ form_label(form.tipoSeguimiento) }}
+                              {{ form_widget(form.tipoSeguimiento) }}
+                            </div> 
+                        </div> 
+                    </div>
+                </div>            
+            </div>            
+            <div id="menu3" class="tab-pane fade">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        Interventor
+                    </div>
+                    <div class="panel panel-body" >
+                        <div class="form-group">
+                            <div class="col-md-12" >
+                              {{ form_label(form.tipoIdentificacion) }}
+                              {{ form_widget(form.tipoIdentificacion) }}
+                            </div> 
+                            <div class="col-md-12 cedInterventor" >
+                              {{ form_label(form.idInterventor) }}
+                              {{ form_widget(form.idInterventor) }}
+                            </div> 
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6" >
+                              {{ form_label(form.numNitInterventor) }}
+                              {{ form_widget(form.numNitInterventor) }}
+                            </div> 
+                            <div class="col-md-6" >
+                              {{ form_label(form.dvInterventor) }}
+                              {{ form_widget(form.dvInterventor) }}
+                            </div> 
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12" >
+                              {{ form_label(form.cedulaExtranjeria) }}
+                              {{ form_widget(form.cedulaExtranjeria) }}
+                            </div> 
+                            <div class="col-md-12" >
+                              {{ form_label(form.nomINterventor) }}
+                              {{ form_widget(form.nomINterventor) }}
+                            </div> 
+                        </div>
+                    </div>
+                </div> 
+            </div> 
+            <div id="menu4" class="tab-pane fade">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        Supervisor
+                    </div>
+                    <div class="panel panel-body" >
+                        <div class="form-group">
+                            <div class="col-md-12" >
+                              {{ form_label(form.tipoIdSupervisor) }}
+                              {{ form_widget(form.tipoIdSupervisor) }}
+                            </div> 
+                            <div class="col-md-12" >
+                              {{ form_label(form.identSupervisor) }}
+                              {{ form_widget(form.identSupervisor) }}
+                            </div> 
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6" >
+                              {{ form_label(form.nitSupervisor) }}
+                              {{ form_widget(form.nitSupervisor) }}
+                            </div> 
+                            <div class="col-md-6" >
+                              {{ form_label(form.dvSupervisor) }}
+                              {{ form_widget(form.dvSupervisor) }}
+                            </div> 
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12" >
+                                {{ form_label(form.nombreSupervisor) }}
+                                {{ form_widget(form.nombreSupervisor) }}
+                            </div>    
+                        </div>
+                    </div>
+                </div> 
+            </div> 
+            <div id="menu5" class="tab-pane fade">
+                 <div class="panel panel-info">
+                    <div class="panel-heading">
+                        Detalles del convenio o contrato
+                    </div>
+                    <div class="panel panel-body" >
+                            <div class="form-group">
+                                <div class="col-md-4" >
+                                  {{ form_label(form.plazoConvenio) }}
+                                  {{ form_widget(form.plazoConvenio) }}
+                                </div> 
+                                <div class="col-md-4" >
+                                  {{ form_label(form.adiciones) }}
+                                  {{ form_widget(form.adiciones) }}
+                                </div> 
+                                <div class="col-md-4" >
+                                  {{ form_label(form.vlrTotalAdiciones) }}
+                                  {{ form_widget(form.vlrTotalAdiciones) }}
+                                </div>
+                            </div>
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                {{ form_label(form.numDiasAdiciones) }}
+                                {{ form_widget(form.numDiasAdiciones) }}
+                            </div> 
+                            <div class="col-md-12" >
+                                   
+                            </div> 
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4" >
+                              {{ form_label(form.fechaInicioConvenio) }}
+                              {{ form_widget(form.fechaInicioConvenio) }}
+                            </div> 
+                            <div class="col-md-4" >
+                              {{ form_label(form.fechaFinConvenio) }}
+                              {{ form_widget(form.fechaFinConvenio) }}
+                            </div> 
+                            <div class="col-md-4" >
+                              {{ form_label(form.fechaLiquidacion) }}
+                              {{ form_widget(form.fechaLiquidacion) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4" >
+                              {{ form_label(form.porcentavanceFisicoprogra) }}
+                              {{ form_widget(form.porcentavanceFisicoprogra) }}
+                            </div> 
+                            <div class="col-md-4" >
+                              {{ form_label(form.porcentavanceFisicoreal) }}
+                              {{ form_widget(form.porcentavanceFisicoreal) }}
+                            </div> 
+                            <div class="col-md-4" >
+                              {{ form_label(form.porcentavancePresuprogram) }}
+                              {{ form_widget(form.porcentavancePresuprogram) }}
+                            </div>
+                        </div>
+                        <div class="form-group">    
+                            <div class="col-md-4" >
+                              {{ form_label(form.porcentavancePresupreal) }}
+                              {{ form_widget(form.porcentavancePresupreal) }}
+                            </div> 
+                        </div>    
+                        <div class="form-group">
+                            <div class="col-md-12" >
+                              {{ form_label(form.Observaciones) }}
+                              {{ form_widget(form.Observaciones) }}                        
+                            </div>
+                        </div>
+                    </div>
+                 </div>            
+            </div> 
+            <div id="menu6" class="tab-pane fade">
+                
+            </div>
+            <div class="form-group">
+              {{ form_widget(form.save) }}
+            </div>
           
         {{ form_end(form) }}
     </div>

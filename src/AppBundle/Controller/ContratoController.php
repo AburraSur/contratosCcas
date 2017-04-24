@@ -78,7 +78,7 @@ class ContratoController extends Controller {
                                                     ->where('u.tipoParametro=2');
                                         },
                     'choice_label' => 'Descripcion',
-                    'attr' => array('class' => 'form-control selectpicker','id' => 'claseCon')
+                    'attr' => array('class' => 'form-control selectpicker ','id' => 'claseCon')
                 ))
                 ->add('numConvenio',TextType::class, array('label' => 'Número de convenio o contrato', 'attr' => array('class' => 'form-control','id' => 'numConvenio', 'placeholder' => 'Número de convenio o contrato')))
                 ->add('fechaSuscripcion', DateType::class, array(
@@ -88,7 +88,7 @@ class ContratoController extends Controller {
                         'attr' => ['class' => 'datepicker form-control' ],
                     ))
                 ->add('vecesRegistrado',EntityType::class, array(
-                   'label' => 'Cantidad de veces reportado en el SIRECI',
+                   'label' => 'Veces reportado en el SIRECI',
                    'placeholder' => 'Seleccionar',
                    'class' => 'AppBundle:Parametros',
                    'query_builder' => function (EntityRepository $er) {
@@ -98,7 +98,7 @@ class ContratoController extends Controller {
                     'choice_label' => 'Descripcion',
                     'attr' => array('class' => 'form-control selectpicker','id' => 'vecesRep','data-live-search' => 'true')
                 ))
-                ->add('objetoContrato',TextareaType::class, array('label' => 'Objeto del convenio o contrato', 'attr' => array('class' => 'form-control','id' => 'objetoConv')))
+                ->add('objetoContrato',TextareaType::class, array('label' => 'Objeto del convenio o contrato', 'attr' => array('class' => 'form-control','id' => 'objetoConv','placeholder'=>'Objeto del convenio o contrato')))
                 ->add('vlrContrato',TextType::class, array('label' => 'Valor total del convenio o contrato', 'attr' => array('class' => 'form-control','id' => 'vlrContrato', 'placeholder' => '(En pesos)')))
                 ->add('idEntidad',TextType::class, array('label' => 'NIT de la entidad', 'attr' => array('class' => 'form-control','id' => 'vlrContrato', 'placeholder' => '(Sin digito de verificación, puntos o comas)')))
                 ->add('dvEntidad',EntityType::class, array(
@@ -173,6 +173,68 @@ class ContratoController extends Controller {
                 ))
                 ->add('cedulaExtranjeria',TextType::class, array('label' => 'Cédula Extranjería interventor', 'attr' => array('class' => 'form-control','id' => 'cedExtra', 'placeholder' => 'Cédula extranjería')))
                 ->add('nomINterventor',TextType::class, array('label' => 'Interventor', 'attr' => array('class' => 'form-control','id' => 'nomInterven', 'placeholder' => 'Nombre completo')))
+                ->add('tipoIdSupervisor',EntityType::class, array(
+                   'label' => 'Tipo de identificación del supervisor',
+                   'placeholder' => 'Seleccionar',
+                   'class' => 'AppBundle:Parametros',
+                   'query_builder' => function (EntityRepository $er) {
+                                            return $er->createQueryBuilder('u')
+                                                    ->where('u.tipoParametro=8');
+                                        },
+                    'choice_label' => 'Descripcion',
+                    'attr' => array('class' => 'form-control selectpicker','id' => 'tipoIdSuperv','data-live-search' => 'true')
+                ))
+                ->add('identSupervisor',TextType::class, array('label' => 'Identificación', 'attr' => array('class' => 'form-control','id' => 'cedSuperv', 'placeholder' => 'Número de cédula o RUT')))
+                ->add('nitSupervisor',TextType::class, array('label' => 'NIT interventor', 'attr' => array('class' => 'form-control','id' => 'dvSuperv', 'placeholder' => 'Sin digito de verificación, comas o puntos')))
+                ->add('dvSupervisor',EntityType::class, array(
+                   'label' => 'Digito de verificación',
+                   'placeholder' => 'Seleccionar',
+                   'class' => 'AppBundle:Parametros',
+                   'query_builder' => function (EntityRepository $er) {
+                                            return $er->createQueryBuilder('u')
+                                                    ->where('u.tipoParametro=4');
+                                        },
+                    'choice_label' => 'Descripcion',
+                    'attr' => array('class' => 'form-control selectpicker','id' => 'digVerSuperv','data-live-search' => 'true')
+                ))
+                ->add('nombreSupervisor',TextType::class, array('label' => 'Supervisor', 'attr' => array('class' => 'form-control','id' => 'nomSuperv', 'placeholder' => 'Nombre completo')))
+                ->add('plazoConvenio',TextType::class, array('label' => 'Plazo del convenio o contrato', 'attr' => array('class' => 'form-control','id' => 'plazoCont', 'placeholder' => 'Días calendario')))
+                ->add('adiciones',EntityType::class, array(
+                   'label' => 'Adiciones',
+                   'placeholder' => 'Seleccionar',
+                   'class' => 'AppBundle:Parametros',
+                   'query_builder' => function (EntityRepository $er) {
+                                            return $er->createQueryBuilder('u')
+                                                    ->where('u.tipoParametro=9');
+                                        },
+                    'choice_label' => 'Descripcion',
+                    'attr' => array('class' => 'form-control selectpicker','id' => 'digVerSuperv','data-live-search' => 'true')
+                ))
+                ->add('vlrTotalAdiciones',TextType::class, array('label' => 'Valor total', 'attr' => array('class' => 'form-control','id' => 'vlrAdiciones', 'placeholder' => 'En pesos')))
+                ->add('numDiasAdiciones',TextType::class, array('label' => 'Adiciones: Número de días', 'attr' => array('class' => 'form-control','id' => 'diasAdiciones', 'placeholder' => 'Número de días')))
+                ->add('fechaInicioConvenio', DateType::class, array(
+                    'label' => 'Fecha inicio del convenio o contrato',
+                    'widget' => 'single_text',
+                    'html5' => false,
+                    'attr' => ['class' => 'datepicker form-control' ],
+                ))
+                ->add('fechaFinConvenio', DateType::class, array(
+                    'label' => 'Fecha terminación del convenio o contrato',
+                    'widget' => 'single_text',
+                    'html5' => false,
+                    'attr' => ['class' => 'datepicker form-control' ],
+                ))
+                ->add('fechaLiquidacion', DateType::class, array(
+                    'label' => 'Fecha liquidación del convenio o contrato',
+                    'widget' => 'single_text',
+                    'html5' => false,
+                    'attr' => ['class' => 'datepicker form-control' ],
+                ))
+                ->add('porcentavanceFisicoprogra',TextType::class, array('label' => '% Avance físico programado', 'attr' => array('class' => 'form-control','id' => 'porcAvanceprog', 'placeholder' => 'Porcentaje en números')))
+                ->add('porcentavanceFisicoreal',TextType::class, array('label' => '%  Avance físico real', 'attr' => array('class' => 'form-control','id' => 'porcAvancereal', 'placeholder' => 'Porcentaje en números')))
+                ->add('porcentavancePresuprogram',TextType::class, array('label' => '%  Avance presupuestal programado', 'attr' => array('class' => 'form-control','id' => 'porcAvaPresupProg', 'placeholder' => 'Porcentaje en números')))
+                ->add('porcentavancePresupreal',TextType::class, array('label' => '% Avance presupuestal real', 'attr' => array('class' => 'form-control','id' => 'porcAvaPresupReal', 'placeholder' => 'Porcentaje en números')))
+                ->add('Observaciones',TextareaType::class, array('label' => 'Observaciones', 'attr' => array('class' => 'form-control','id' => 'Observaciones', 'placeholder' => 'Observaciones')))
                 ->add('save', SubmitType::class, array('label' => 'Guardar' , 'attr' => array('class' => 'btn btn-default')))
                 ->getForm();
        
@@ -191,6 +253,20 @@ class ContratoController extends Controller {
             'form' => $form->createView(),
         ));
    }
+   
+   /**
+     * Finds and displays a contrato entity.
+     *
+     * @Route("/{id}", name="contrato_show")
+     * @Method("GET")
+     */
+    public function showAction(Contrato $contrato)
+    {
+
+        return $this->render('contrato/show.html.twig', array(
+            'contrato' => $contrato,
+        ));
+    }
     
 }
 

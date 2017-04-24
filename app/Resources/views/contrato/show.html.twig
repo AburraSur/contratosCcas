@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Contrato</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ contrato.id }}</td>
+            </tr>
+            <tr>
+                <th>Descripcion</th>
+                <td>{{ contrato.descripcion }}</td>
+            </tr>
+            <tr>
+                <th>Current</th>
+                <td>{% if contrato.current %}{{ contrato.current|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('contratos_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('contratos_edit', { 'id': contrato.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
