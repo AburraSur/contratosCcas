@@ -4,20 +4,21 @@
     <div class="container">
         
         <h2><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Nuevo Contrato</h2>
-        <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#menu1"><h3>Información Basica</h3></a></li>
-            <li><a data-toggle="tab" href="#menu2"><h3>Entidad</h3></a></li>
-            <li><a data-toggle="tab" href="#menu3"><h3>Interventor</h3></a></li>
-            <li><a data-toggle="tab" href="#menu4"><h3>Supervisor</h3></a></li>
-            <li><a data-toggle="tab" href="#menu5"><h3>Detalles</h3></a></li>
-            <li><a data-toggle="tab" href="#menu6"><h3>notificaciones</h3></a></li>
+        <ul class="nav nav-pills">
+            <li class="menu1 active"><a data-toggle="tab" href="#menu1"><h3>Información Basica</h3></a></li>
+            <li class="menu2" ><a data-toggle="tab" href="#menu2"><h3>Entidad</h3></a></li>
+            <li class="menu3" ><a data-toggle="tab" href="#menu3"><h3>Interventor</h3></a></li>
+            <li class="menu4" ><a data-toggle="tab" href="#menu4"><h3>Supervisor</h3></a></li>
+            <li class="menu5" ><a data-toggle="tab" href="#menu5"><h3>Detalles</h3></a></li>
+            <li class="menu6" ><a data-toggle="tab" href="#menu6"><h3>notificaciones</h3></a></li>
         </ul>
-        {{ form_start(form) }}
+        {# {{ form_start(form) }} #}
+        {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
         <div class="tab-content">
             <div id="menu1" class="tab-pane fade  in active">
-                <div class="panel panel-info">
+                <div class="panel panel-primary">
                     <div class="panel-heading">
-                        Información basica del contrato
+                        <h4>Información basica del contrato</h4>
                     </div>
                     <div class="panel panel-body" >
                         <div class="form-group">
@@ -31,6 +32,7 @@
                             <div class="col-md-12">
                                 {{ form_label(form.justificacion) }}
                                 {{ form_widget(form.justificacion) }}
+                                {{ form_errors(form.justificacion) }}
                             </div>
                         </div>    
                         <div class="form-group">
@@ -64,15 +66,17 @@
                             </div>    
                         </div>
                         <div class="form-group">
-                            <a data-toggle="tab" href="#menu2" class="btn btn-info pull-right">Siguiente</a>
+                            <div class="col-md-12">
+                                <a data-toggle="tab" href="#menu2" style="margin: 15px;" class="next btn btn-info pull-right">Siguiente</a>
+                            </div>    
                         </div>
                     </div>
                 </div>        
             </div>
             <div id="menu2" class="tab-pane fade">
-                <div class="panel panel-info">
+                <div class="panel panel-primary">
                     <div class="panel-heading">
-                        Entidad pública que interviene en el convenio o contrato
+                        <h4>Entidad pública que interviene en el convenio o contrato</h4>
                     </div>
                     <div class="panel panel-body" >
                         <div class="form-group">
@@ -86,8 +90,10 @@
                             </div> 
                         </div>
                         <div class="form-group">
-                          {{ form_label(form.nombreEntidad) }}
-                          {{ form_widget(form.nombreEntidad) }}
+                            <div class="col-md-12">
+                                {{ form_label(form.nombreEntidad) }}
+                                {{ form_widget(form.nombreEntidad) }}
+                            </div>  
                         </div>
                         <div class="form-group">
                             <div class="col-md-6" >
@@ -109,13 +115,20 @@
                               {{ form_widget(form.tipoSeguimiento) }}
                             </div> 
                         </div> 
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <a data-toggle="tab" href="#menu1" style="margin: 15px;" class="next btn btn-info pull-left">Atras</a>
+                            
+                                <a data-toggle="tab" href="#menu3" style="margin: 15px;" class="next btn btn-info pull-right">Siguiente</a>
+                            </div> 
+                        </div>    
                     </div>
                 </div>            
             </div>            
             <div id="menu3" class="tab-pane fade">
-                <div class="panel panel-info">
+                <div class="panel panel-primary">
                     <div class="panel-heading">
-                        Interventor
+                        <h4>Interventor del convenio o contrato</h4>
                     </div>
                     <div class="panel panel-body" >
                         <div class="form-group">
@@ -148,13 +161,20 @@
                               {{ form_widget(form.nomINterventor) }}
                             </div> 
                         </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <a data-toggle="tab" href="#menu2" style="margin: 15px;" class="next btn btn-info pull-left">Atras</a>
+                            
+                                <a data-toggle="tab" href="#menu4" style="margin: 15px;" class="next btn btn-info pull-right">Siguiente</a>
+                            </div> 
+                        </div>    
                     </div>
                 </div> 
             </div> 
             <div id="menu4" class="tab-pane fade">
-                <div class="panel panel-info">
+                <div class="panel panel-primary">
                     <div class="panel-heading">
-                        Supervisor
+                        <h4>Supervisor del convenio o contrato</h4>
                     </div>
                     <div class="panel panel-body" >
                         <div class="form-group">
@@ -183,13 +203,20 @@
                                 {{ form_widget(form.nombreSupervisor) }}
                             </div>    
                         </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <a data-toggle="tab" href="#menu3" style="margin: 15px;" class="next btn btn-info pull-left">Atras</a>
+                            
+                                <a data-toggle="tab" href="#menu5" style="margin: 15px;" class="next btn btn-info pull-right">Siguiente</a>
+                            </div> 
+                        </div>    
                     </div>
                 </div> 
             </div> 
             <div id="menu5" class="tab-pane fade">
-                 <div class="panel panel-info">
+                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        Detalles del convenio o contrato
+                        <h4>Detalles del convenio o contrato</h4>
                     </div>
                     <div class="panel panel-body" >
                             <div class="form-group">
@@ -255,16 +282,45 @@
                               {{ form_widget(form.Observaciones) }}                        
                             </div>
                         </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <a data-toggle="tab" href="#menu4" style="margin: 15px;" class="next btn btn-info pull-left">Atras</a>
+                            
+                                <a data-toggle="tab" href="#menu6" style="margin: 15px;" class="next btn btn-info pull-right">Siguiente</a>
+                            </div> 
+                        </div>    
                     </div>
                  </div>            
             </div> 
             <div id="menu6" class="tab-pane fade">
-                
-            </div>
-            <div class="form-group">
-              {{ form_widget(form.save) }}
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4>Notificaciones programadas</h4>
+                    </div>
+                    <div class="panel panel-body" >
+                        <div class="form-group">
+                            <div class="col-md-12" style="margin: 15px;">
+                                <a data-toggle="tab" href="#menu5" class="next btn btn-info pull-left">Atras</a>
+                                {{ form_widget(form.save) }}
+                            </div> 
+                        </div>
+                    </div>
+                </div>            
             </div>
           
         {{ form_end(form) }}
     </div>
 {% endblock content %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready(function(){
+            $('.next').click(function(){
+                var tag = $(this).attr('href');
+                var vltag = tag.substr(1);
+                $('.active').removeClass('active');
+                $('.'+vltag).addClass('active');
+            });
+        });
+    </script>
+{% endblock %}    

@@ -235,7 +235,7 @@ class ContratoController extends Controller {
                 ->add('porcentavancePresuprogram',TextType::class, array('label' => '%  Avance presupuestal programado', 'attr' => array('class' => 'form-control','id' => 'porcAvaPresupProg', 'placeholder' => 'Porcentaje en números')))
                 ->add('porcentavancePresupreal',TextType::class, array('label' => '% Avance presupuestal real', 'attr' => array('class' => 'form-control','id' => 'porcAvaPresupReal', 'placeholder' => 'Porcentaje en números')))
                 ->add('Observaciones',TextareaType::class, array('label' => 'Observaciones', 'attr' => array('class' => 'form-control','id' => 'Observaciones', 'placeholder' => 'Observaciones')))
-                ->add('save', SubmitType::class, array('label' => 'Guardar' , 'attr' => array('class' => 'btn btn-default')))
+                ->add('save', SubmitType::class, array('label' => 'Guardar' , 'attr' => array('class' => 'btn btn-primary pull-right')))
                 ->getForm();
        
        $form->handleRequest($request);
