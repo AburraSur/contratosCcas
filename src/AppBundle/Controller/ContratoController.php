@@ -54,11 +54,16 @@ class ContratoController extends Controller {
    public function CrearContratoAction(Request $request) {
        $em = $this->getDoctrine()->getManager();
        
+       $translator = $this->get('translator');
+       
+       
+       
+       
        $contrato = new Contrato();
        
        $form = $this->createFormBuilder($contrato)
                 ->add('conInformacion', ChoiceType::class, array(
-                    'label' => 'Formulario con información',
+                    'label' => $translator->trans('labels.formularioInfo', [], 'AppBundle'),
                     'expanded' => false,
                     'multiple' => false,
                     'placeholder' => 'Seleccionar',
@@ -173,31 +178,43 @@ class ContratoController extends Controller {
                 ))
                 ->add('cedulaExtranjeria',TextType::class, array('label' => 'Cédula Extranjería interventor', 'attr' => array('class' => 'form-control','id' => 'cedExtra', 'placeholder' => 'Cédula extranjería')))
                 ->add('nomINterventor',TextType::class, array('label' => 'Interventor', 'attr' => array('class' => 'form-control','id' => 'nomInterven', 'placeholder' => 'Nombre completo')))
-                ->add('tipoIdSupervisor',EntityType::class, array(
-                   'label' => 'Tipo de identificación del supervisor',
+//                ->add('tipoIdSupervisor',EntityType::class, array(
+//                   'label' => 'Tipo de identificación del supervisor',
+//                   'placeholder' => 'Seleccionar',
+//                   'class' => 'AppBundle:Parametros',
+//                   'query_builder' => function (EntityRepository $er) {
+//                                            return $er->createQueryBuilder('u')
+//                                                    ->where('u.tipoParametro=8');
+//                                        },
+//                    'choice_label' => 'Descripcion',
+//                    'attr' => array('class' => 'form-control selectpicker','id' => 'tipoIdSuperv','data-live-search' => 'true')
+//                ))
+//                ->add('identSupervisor',TextType::class, array('label' => 'Identificación', 'attr' => array('class' => 'form-control','id' => 'cedSuperv', 'placeholder' => 'Número de cédula o RUT')))
+//                ->add('nitSupervisor',TextType::class, array('label' => 'NIT interventor', 'attr' => array('class' => 'form-control','id' => 'dvSuperv', 'placeholder' => 'Sin digito de verificación, comas o puntos')))
+//                ->add('dvSupervisor',EntityType::class, array(
+//                   'label' => 'Digito de verificación',
+//                   'placeholder' => 'Seleccionar',
+//                   'class' => 'AppBundle:Parametros',
+//                   'query_builder' => function (EntityRepository $er) {
+//                                            return $er->createQueryBuilder('u')
+//                                                    ->where('u.tipoParametro=4');
+//                                        },
+//                    'choice_label' => 'Descripcion',
+//                    'attr' => array('class' => 'form-control selectpicker','id' => 'digVerSuperv','data-live-search' => 'true')
+//                ))
+//                ->add('nombreSupervisor',TextType::class, array('label' => 'Supervisor', 'attr' => array('class' => 'form-control','id' => 'nomSuperv', 'placeholder' => 'Nombre completo')))
+                ->add('idSupervisor',EntityType::class, array(
+                   'label' => 'Supervisor',
                    'placeholder' => 'Seleccionar',
-                   'class' => 'AppBundle:Parametros',
+                   'class' => 'AppBundle:User',
                    'query_builder' => function (EntityRepository $er) {
                                             return $er->createQueryBuilder('u')
-                                                    ->where('u.tipoParametro=8');
+                                                    ->where('u.roles LIKE :roles')
+                                                    ->setParameter('roles', '%"ROLE_SUPERVISOR"%');
                                         },
-                    'choice_label' => 'Descripcion',
-                    'attr' => array('class' => 'form-control selectpicker','id' => 'tipoIdSuperv','data-live-search' => 'true')
-                ))
-                ->add('identSupervisor',TextType::class, array('label' => 'Identificación', 'attr' => array('class' => 'form-control','id' => 'cedSuperv', 'placeholder' => 'Número de cédula o RUT')))
-                ->add('nitSupervisor',TextType::class, array('label' => 'NIT interventor', 'attr' => array('class' => 'form-control','id' => 'dvSuperv', 'placeholder' => 'Sin digito de verificación, comas o puntos')))
-                ->add('dvSupervisor',EntityType::class, array(
-                   'label' => 'Digito de verificación',
-                   'placeholder' => 'Seleccionar',
-                   'class' => 'AppBundle:Parametros',
-                   'query_builder' => function (EntityRepository $er) {
-                                            return $er->createQueryBuilder('u')
-                                                    ->where('u.tipoParametro=4');
-                                        },
-                    'choice_label' => 'Descripcion',
-                    'attr' => array('class' => 'form-control selectpicker','id' => 'digVerSuperv','data-live-search' => 'true')
-                ))
-                ->add('nombreSupervisor',TextType::class, array('label' => 'Supervisor', 'attr' => array('class' => 'form-control','id' => 'nomSuperv', 'placeholder' => 'Nombre completo')))
+                    'choice_label' => 'username',
+                    'attr' => array('class' => 'form-control selectpicker','id' => 'idSuperv','data-live-search' => 'true')
+                ))                                
                 ->add('plazoConvenio',TextType::class, array('label' => 'Plazo del convenio o contrato', 'attr' => array('class' => 'form-control','id' => 'plazoCont', 'placeholder' => 'Días calendario')))
                 ->add('adiciones',EntityType::class, array(
                    'label' => 'Adiciones',

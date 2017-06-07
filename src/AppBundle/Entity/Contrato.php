@@ -162,37 +162,10 @@ class Contrato
     private $nomINterventor;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Parametros", inversedBy="contrato")
-     * @ORM\JoinColumn(name="tipoIdSupervisor", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="contrato")
+     * @ORM\JoinColumn(name="idSupervisor", referencedColumnName="id")
      */
-    private $tipoIdSupervisor;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="IdentSupervisor", type="string", length=12)
-     */
-    private $identSupervisor;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="nitSupervisor", type="string", length=12)
-     */
-    private $nitSupervisor;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="Parametros", inversedBy="contrato")
-     * @ORM\JoinColumn(name="dvSupervisor", referencedColumnName="id")
-     */
-    private $dvSupervisor;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="nombreSupervisor", type="string", length=120)
-     */
-    private $nombreSupervisor;
+    private $idSupervisor;
 
     /**
      * @var string
@@ -810,124 +783,30 @@ class Contrato
     }
 
     /**
-     * Set tipoIdSupervisor
+     * Set idSupervisor
      *
-     * @param integer $tipoIdSupervisor
+     * @param integer $idSupervisor
      *
      * @return Contrato
      */
-    public function setTipoIdSupervisor($tipoIdSupervisor)
+    public function setIdSupervisor($idSupervisor)
     {
-        $this->tipoIdSupervisor = $tipoIdSupervisor;
+        $this->idSupervisor = $idSupervisor;
 
         return $this;
     }
 
     /**
-     * Get tipoIdSupervisor
+     * Get idSupervisor
      *
      * @return int
      */
-    public function getTipoIdSupervisor()
+    public function getidSupervisor()
     {
-        return $this->tipoIdSupervisor;
+        return $this->idSupervisor;
     }
 
-    /**
-     * Set identSupervisor
-     *
-     * @param string $identSupervisor
-     *
-     * @return Contrato
-     */
-    public function setIdentSupervisor($identSupervisor)
-    {
-        $this->identSupervisor = $identSupervisor;
-
-        return $this;
-    }
-
-    /**
-     * Get identSupervisor
-     *
-     * @return string
-     */
-    public function getIdentSupervisor()
-    {
-        return $this->identSupervisor;
-    }
-
-    /**
-     * Set nitSupervisor
-     *
-     * @param string $nitSupervisor
-     *
-     * @return Contrato
-     */
-    public function setNitSupervisor($nitSupervisor)
-    {
-        $this->nitSupervisor = $nitSupervisor;
-
-        return $this;
-    }
-
-    /**
-     * Get nitSupervisor
-     *
-     * @return string
-     */
-    public function getNitSupervisor()
-    {
-        return $this->nitSupervisor;
-    }
-
-    /**
-     * Set dvSupervisor
-     *
-     * @param integer $dvSupervisor
-     *
-     * @return Contrato
-     */
-    public function setDvSupervisor($dvSupervisor)
-    {
-        $this->dvSupervisor = $dvSupervisor;
-
-        return $this;
-    }
-
-    /**
-     * Get dvSupervisor
-     *
-     * @return int
-     */
-    public function getDvSupervisor()
-    {
-        return $this->dvSupervisor;
-    }
-
-    /**
-     * Set nombreSupervisor
-     *
-     * @param string $nombreSupervisor
-     *
-     * @return Contrato
-     */
-    public function setNombreSupervisor($nombreSupervisor)
-    {
-        $this->nombreSupervisor = $nombreSupervisor;
-
-        return $this;
-    }
-
-    /**
-     * Get nombreSupervisor
-     *
-     * @return string
-     */
-    public function getNombreSupervisor()
-    {
-        return $this->nombreSupervisor;
-    }
+    
 
     /**
      * Set plazoConvenio
