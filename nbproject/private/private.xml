@@ -2,16 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Bitnami/wampstack-5.6.29-0/apache2/htdocs/contratosCcas/vendor/friendsofsymfony/user-bundle/Resources/views/Registration/register_content.html.twig</file>
-            <file>file:/C:/Bitnami/wampstack-5.6.29-0/apache2/htdocs/contratosCcas/src/AppBundle/Controller/DefaultController.php</file>
-            <file>file:/C:/Bitnami/wampstack-5.6.29-0/apache2/htdocs/contratosCcas/app/Resources/views/contrato/new.html.twig</file>
-            <file>file:/C:/Bitnami/wampstack-5.6.29-0/apache2/htdocs/contratosCcas/src/AppBundle/Controller/ContratoController.php</file>
-            <file>file:/C:/Bitnami/wampstack-5.6.29-0/apache2/htdocs/contratosCcas/src/AppBundle/Resources/translations/AppBundle.es.yml</file>
-            <file>file:/C:/Bitnami/wampstack-5.6.29-0/apache2/htdocs/contratosCcas/vendor/friendsofsymfony/user-bundle/Resources/views/Registration/register.html.twig</file>
-            <file>file:/C:/Bitnami/wampstack-5.6.29-0/apache2/htdocs/contratosCcas/vendor/friendsofsymfony/user-bundle/Form/Type/RegistrationFormType.php</file>
-            <file>file:/C:/Bitnami/wampstack-5.6.29-0/apache2/htdocs/contratosCcas/src/AppBundle/Entity/Contrato.php</file>
-            <file>file:/C:/Bitnami/wampstack-5.6.29-0/apache2/htdocs/contratosCcas/app/Resources/views/contrato/contrato.html.twig</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

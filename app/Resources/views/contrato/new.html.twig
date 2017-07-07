@@ -8,7 +8,6 @@
             <li class="menu1 active"><a data-toggle="tab" href="#menu1"><h3>Información Basica</h3></a></li>
             <li class="menu2" ><a data-toggle="tab" href="#menu2"><h3>Entidad</h3></a></li>
             <li class="menu3" ><a data-toggle="tab" href="#menu3"><h3>Interventor</h3></a></li>
-            <li class="menu4" ><a data-toggle="tab" href="#menu4"><h3>Supervisor</h3></a></li>
             <li class="menu5" ><a data-toggle="tab" href="#menu5"><h3>Detalles</h3></a></li>
             <li class="menu6" ><a data-toggle="tab" href="#menu6"><h3>notificaciones</h3></a></li>
         </ul>
@@ -136,34 +135,37 @@
                               {{ form_label(form.tipoIdentificacion) }}
                               {{ form_widget(form.tipoIdentificacion) }}
                             </div> 
-                            <div class="col-md-12 cedInterventor" >
+                            <div class="col-md-12 cedIntv hide interv" >
                               {{ form_label(form.idInterventor) }}
                               {{ form_widget(form.idInterventor) }}
                             </div> 
                         </div>
                         <div class="form-group">
-                            <div class="col-md-6" >
+                            <div class="col-md-6 nitIntv hide interv">
                               {{ form_label(form.numNitInterventor) }}
                               {{ form_widget(form.numNitInterventor) }}
                             </div> 
-                            <div class="col-md-6" >
+                            <div class="col-md-6 nitIntv hide interv" >
                               {{ form_label(form.dvInterventor) }}
                               {{ form_widget(form.dvInterventor) }}
                             </div> 
                         </div>
                         <div class="form-group">
-                            <div class="col-md-12" >
+                            <div class="col-md-12 cedExtra hide interv" >
                               {{ form_label(form.cedulaExtranjeria) }}
                               {{ form_widget(form.cedulaExtranjeria) }}
                             </div> 
-                            <div class="col-md-12" >
+                            <div class="col-md-12 nomIntv" >
                               {{ form_label(form.nomINterventor) }}
                               {{ form_widget(form.nomINterventor) }}
                             </div> 
-                            <div class="col-md-12" >
+                            <div class="col-md-8" >
                               {{ form_label(form.idSupervisor) }}
                               {{ form_widget(form.idSupervisor) }}
                             </div> 
+                            <div class="col-md-4" >
+                                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Crear Superviso</button>
+                            </div>    
                         </div>
                         <div class="form-group">
                             <div class="col-md-12">
@@ -314,6 +316,12 @@
           
         {{ form_end(form) }}
     </div>
+    <div class="hide" >
+        <div id="addUser" >
+            {#{% include "@FOSUser/Registration/register.html.twig" %}
+            {{ render(controller('FOSUserBundle:Registration:register')) }}#}
+        </div>    
+    </div>     
 {% endblock content %}
 {% block javascripts %}
     {{ parent() }}
@@ -324,6 +332,27 @@
                 var vltag = tag.substr(1);
                 $('.active').removeClass('active');
                 $('.'+vltag).addClass('active');
+            });
+            
+            $('#form_tipoIdentificacion').change(function(){
+                var val = $(this).val();
+                //$('.interv input').val('0');
+                if(val==134){
+                    $('.interv').addClass('hide');
+                    $('.nitIntv').removeClass('hide');
+                }
+                if(val==135 || val==136){
+                    $('.interv').addClass('hide');
+                    $('.cedIntv').removeClass('hide');
+                }
+                if(val==137){
+                    $('.interv').addClass('hide');
+                    $('.cedExtra').removeClass('hide');
+                }
+                if(val==138){
+                    $('.interv').addClass('hide');
+                    $('.nomIntv').addClass('hide');
+                }
             });
         });
     </script>

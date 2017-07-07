@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Contrato;
 use AppBundle\Entity\Parametros;
+use AppBundle\Entity\User;
 use Doctrine\ORM\EntityRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -161,7 +162,7 @@ class ContratoController extends Controller {
                                                     ->where('u.tipoParametro=8');
                                         },
                     'choice_label' => 'Descripcion',
-                    'attr' => array('class' => 'form-control selectpicker','id' => 'tipoIdInterv','data-live-search' => 'true')
+                    'attr' => array('class' => 'form-control selectpicker','data-live-search' => 'true')
                 ))
                 ->add('idInterventor',TextType::class, array('label' => 'Identificación', 'attr' => array('class' => 'form-control','id' => 'cedInterve', 'placeholder' => 'Número de cédula o RUT')))
                 ->add('numNitInterventor',TextType::class, array('label' => 'NIT interventor', 'attr' => array('class' => 'form-control','id' => 'dvInterven', 'placeholder' => 'Sin digito de verificación, comas o puntos')))
@@ -178,31 +179,6 @@ class ContratoController extends Controller {
                 ))
                 ->add('cedulaExtranjeria',TextType::class, array('label' => 'Cédula Extranjería interventor', 'attr' => array('class' => 'form-control','id' => 'cedExtra', 'placeholder' => 'Cédula extranjería')))
                 ->add('nomINterventor',TextType::class, array('label' => 'Interventor', 'attr' => array('class' => 'form-control','id' => 'nomInterven', 'placeholder' => 'Nombre completo')))
-//                ->add('tipoIdSupervisor',EntityType::class, array(
-//                   'label' => 'Tipo de identificación del supervisor',
-//                   'placeholder' => 'Seleccionar',
-//                   'class' => 'AppBundle:Parametros',
-//                   'query_builder' => function (EntityRepository $er) {
-//                                            return $er->createQueryBuilder('u')
-//                                                    ->where('u.tipoParametro=8');
-//                                        },
-//                    'choice_label' => 'Descripcion',
-//                    'attr' => array('class' => 'form-control selectpicker','id' => 'tipoIdSuperv','data-live-search' => 'true')
-//                ))
-//                ->add('identSupervisor',TextType::class, array('label' => 'Identificación', 'attr' => array('class' => 'form-control','id' => 'cedSuperv', 'placeholder' => 'Número de cédula o RUT')))
-//                ->add('nitSupervisor',TextType::class, array('label' => 'NIT interventor', 'attr' => array('class' => 'form-control','id' => 'dvSuperv', 'placeholder' => 'Sin digito de verificación, comas o puntos')))
-//                ->add('dvSupervisor',EntityType::class, array(
-//                   'label' => 'Digito de verificación',
-//                   'placeholder' => 'Seleccionar',
-//                   'class' => 'AppBundle:Parametros',
-//                   'query_builder' => function (EntityRepository $er) {
-//                                            return $er->createQueryBuilder('u')
-//                                                    ->where('u.tipoParametro=4');
-//                                        },
-//                    'choice_label' => 'Descripcion',
-//                    'attr' => array('class' => 'form-control selectpicker','id' => 'digVerSuperv','data-live-search' => 'true')
-//                ))
-//                ->add('nombreSupervisor',TextType::class, array('label' => 'Supervisor', 'attr' => array('class' => 'form-control','id' => 'nomSuperv', 'placeholder' => 'Nombre completo')))
                 ->add('idSupervisor',EntityType::class, array(
                    'label' => 'Supervisor',
                    'placeholder' => 'Seleccionar',
