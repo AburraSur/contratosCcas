@@ -66,7 +66,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-md-12">
-                                <a data-toggle="tab" href="#menu2" style="margin: 15px;" class="next btn btn-info pull-right">{{ 'labels.dataTable.paginate.next'|trans([], 'AppBundle') }}</a>
+                                <a data-toggle="tab" href="#menu2" style="margin: 15px;" class="next btn btn-primary pull-right">{{ 'labels.dataTable.paginate.next'|trans([], 'AppBundle') }}</a>
                             </div>    
                         </div>
                     </div>
@@ -116,9 +116,9 @@
                         </div> 
                         <div class="form-group">
                             <div class="col-md-12">
-                                <a data-toggle="tab" href="#menu1" style="margin: 15px;" class="next btn btn-info pull-left">{{ 'labels.dataTable.paginate.previous'|trans([], 'AppBundle') }}</a>
+                                <a data-toggle="tab" href="#menu1" style="margin: 15px;" class="next btn btn-primary pull-left">{{ 'labels.dataTable.paginate.previous'|trans([], 'AppBundle') }}</a>
                             
-                                <a data-toggle="tab" href="#menu3" style="margin: 15px;" class="next btn btn-info pull-right">{{ 'labels.dataTable.paginate.next'|trans([], 'AppBundle') }}</a>
+                                <a data-toggle="tab" href="#menu3" style="margin: 15px;" class="next btn btn-primary pull-right">{{ 'labels.dataTable.paginate.next'|trans([], 'AppBundle') }}</a>
                             </div> 
                         </div>    
                     </div>
@@ -164,14 +164,14 @@
                               {{ form_widget(form.idSupervisor) }}
                             </div> 
                             <div class="col-md-4" >
-                                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Crear Superviso</button>
+                                <button type="button" style="margin-top: 25px;" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Crear Supervisor</button>
                             </div>    
                         </div>
                         <div class="form-group">
                             <div class="col-md-12">
-                                <a data-toggle="tab" href="#menu2" style="margin: 15px;" class="next btn btn-info pull-left">{{ 'labels.dataTable.paginate.previous'|trans([], 'AppBundle') }}</a>
+                                <a data-toggle="tab" href="#menu2" style="margin: 15px;" class="next btn btn-primary pull-left">{{ 'labels.dataTable.paginate.previous'|trans([], 'AppBundle') }}</a>
                             
-                                <a data-toggle="tab" href="#menu4" style="margin: 15px;" class="next btn btn-info pull-right">{{ 'labels.dataTable.paginate.next'|trans([], 'AppBundle') }}</a>
+                                <a data-toggle="tab" href="#menu4" style="margin: 15px;" class="next btn btn-primary pull-right">{{ 'labels.dataTable.paginate.next'|trans([], 'AppBundle') }}</a>
                             </div> 
                         </div>    
                     </div>
@@ -211,9 +211,9 @@
                         </div>
                         <div class="form-group">
                             <div class="col-md-12">
-                                <a data-toggle="tab" href="#menu3" style="margin: 15px;" class="next btn btn-info pull-left">{{ 'labels.dataTable.paginate.previous'|trans([], 'AppBundle') }}</a>
+                                <a data-toggle="tab" href="#menu3" style="margin: 15px;" class="next btn btn-primary pull-left">{{ 'labels.dataTable.paginate.previous'|trans([], 'AppBundle') }}</a>
                             
-                                <a data-toggle="tab" href="#menu5" style="margin: 15px;" class="next btn btn-info pull-right">{{ 'labels.dataTable.paginate.next'|trans([], 'AppBundle') }}</a>
+                                <a data-toggle="tab" href="#menu5" style="margin: 15px;" class="next btn btn-primary pull-right">{{ 'labels.dataTable.paginate.next'|trans([], 'AppBundle') }}</a>
                             </div> 
                         </div>    
                     </div>
@@ -290,9 +290,9 @@
                         </div>
                         <div class="form-group">
                             <div class="col-md-12">
-                                <a data-toggle="tab" href="#menu4" style="margin: 15px;" class="next btn btn-info pull-left">{{ 'labels.dataTable.paginate.previous'|trans([], 'AppBundle') }}</a>
+                                <a data-toggle="tab" href="#menu4" style="margin: 15px;" class="next btn btn-primary pull-left">{{ 'labels.dataTable.paginate.previous'|trans([], 'AppBundle') }}</a>
                             
-                                <a data-toggle="tab" href="#menu6" style="margin: 15px;" class="next btn btn-info pull-right">{{ 'labels.dataTable.paginate.next'|trans([], 'AppBundle') }}</a>
+                                <a data-toggle="tab" href="#menu6" style="margin: 15px;" class="next btn btn-primary pull-right">{{ 'labels.dataTable.paginate.next'|trans([], 'AppBundle') }}</a>
                             </div> 
                         </div>    
                     </div>
@@ -306,7 +306,7 @@
                     <div class="panel panel-body" >
                         <div class="form-group">
                             <div class="col-md-12" style="margin: 15px;">
-                                <a data-toggle="tab" href="#menu5" class="next btn btn-info pull-left">{{ 'labels.dataTable.paginate.previous'|trans([], 'AppBundle') }}</a>
+                                <a data-toggle="tab" href="#menu5" class="next btn btn-primary pull-left">{{ 'labels.dataTable.paginate.previous'|trans([], 'AppBundle') }}</a>
                                 {{ form_widget(form.save) }}
                             </div> 
                         </div>
@@ -318,10 +318,26 @@
     </div>
     <div class="hide" >
         <div id="addUser" >
-            {#{% include "@FOSUser/Registration/register.html.twig" %}
-            {{ render(controller('FOSUserBundle:Registration:register')) }}#}
+            {#{% include "@FOSUser/Registration/register.html.twig" %} #}
+            {{ render(controller('FOSUserBundle:Registration:register')) }}
         </div>    
-    </div>     
+    </div>   
+                <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+              <iframe src="{{ asset('FOSUserBundle') }}" />
+          </div>
+        </div>
+
+      </div>
+    </div>
 {% endblock content %}
 {% block javascripts %}
     {{ parent() }}
