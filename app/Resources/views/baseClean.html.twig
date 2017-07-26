@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block title %}
+        {% endblock title %}
+       {% block stylesheets %}
+            {% stylesheets 'bundles/app/css/*' filter='cssrewrite' %}
+                <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+        {% endblock %}
+    </head>
+    <body>        
+        <div class="container">
+            {% block content %}
+            {% endblock content %}
+        </div>
+        
+    </body>
+    {% block javascripts %}
+        <script src="{{ asset('bundles/app/js/jquery.min.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/moment.min.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/bootstrap-datetimepicker.min.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/bootstrap-select.js') }}"></script>  
+    {% endblock %} 
+</html>
