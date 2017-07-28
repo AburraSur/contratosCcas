@@ -318,8 +318,8 @@
     </div>
     <div class="hide" >
         <div id="addUser" >
-            {#{% include "@FOSUser/Registration/register.html.twig" %} #}
-            {{ render(controller('FOSUserBundle:Registration:register')) }}
+            {#{% include "@FOSUser/Registration/register.html.twig" %} 
+            {{ render(controller('FOSUserBundle:Registration:register')) }}#}
         </div>    
     </div>   
                 <!-- Modal -->
@@ -332,7 +332,7 @@
             <button type="button" class="close" data-dismiss="modal">&times;</button>
           </div>
           <div class="modal-body">
-              <iframe src="{{ asset('FOSUserBundle') }}" />
+              {#<iframe src="{{ asset('FOSUserBundle') }}" />#}
           </div>
         </div>
 
@@ -346,6 +346,7 @@
             $('.next').click(function(){
                 var tag = $(this).attr('href');
                 var vltag = tag.substr(1);
+                alert(vltag);
                 $('.active').removeClass('active');
                 $('.'+vltag).addClass('active');
             });
