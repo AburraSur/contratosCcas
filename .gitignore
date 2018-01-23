@@ -49,3 +49,4 @@
 /nbproject/private/*
 web/
 var/SymfonyRequirements.php
+composer.lock
